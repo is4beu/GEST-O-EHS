@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Gestão EHS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Gestão EHS - Login</h2>
+    <form id="loginForm">
+      <label for="username">Usuário:</label>
+      <input type="text" id="username" required />
+      <label for="password">Senha:</label>
+      <input type="password" id="password" required />
+      <button type="submit">Entrar</button>
+    </form>
+    <p id="errorMsg"></p>
+  </div>
+  <script>
+    const users = [
+      { username: 'admin1', password: 'admin123', role: 'admin' },
+      { username: 'admin2', password: 'admin123', role: 'admin' },
+      { username: 'usuario1', password: 'user123', role: 'user' },
+      { username: 'usuario2', password: 'user123', role: 'user' }
+    ];
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const user = users.find(u => u.username === username && u.password === password);
+      if (user) {
+        localStorage.setItem('user', JSON.stringify(user));
+        window.location.href = 'dashboard.html';
+      } else {
+        document.getElementById('errorMsg').textContent = 'Usuário ou senha incorretos';
+      }
+    });
+  </script>
+</body>
+</html>

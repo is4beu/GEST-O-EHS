@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel - Gestão EHS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Gestão EHS - Painel</h2>
+    <button onclick="logout()">Sair</button>
+    <form id="formOcorrencia">
+      <label for="tipo">Tipo de Ocorrência:</label>
+      <select id="tipo" required>
+        <option value="">Selecione</option>
+        <option value="Desvio">Desvio</option>
+        <option value="Incidente">Incidente</option>
+        <option value="Acidente">Acidente</option>
+        <option value="Não Conformidade">Não Conformidade</option>
+      </select>
+      <label for="descricao">Descrição:</label>
+      <textarea id="descricao" required></textarea>
+      <label for="imagem">Foto:</label>
+      <input type="file" id="imagem" accept="image/*" />
+      <button type="submit">Registrar</button>
+    </form>
+    <div id="registros"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

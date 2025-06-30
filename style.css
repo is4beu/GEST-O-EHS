@@ -1,0 +1,32 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
+.container {
+  background: #fff;
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+}
+button {
+  background-color: #2a6a4f;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  margin-top: 15px;
+}
+img {
+  max-width: 100px;
+  margin-top: 10px;
+  display: block;
+}
